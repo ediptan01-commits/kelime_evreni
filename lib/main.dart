@@ -205,7 +205,13 @@ class _AdventurePageState extends State<AdventurePage> {
     const Text('📖 BİLGİ HAZİNESİ', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFF89EAD7))),
     const SizedBox(height: 7), Text(w.fact, style: const TextStyle(height: 1.5)),
     const SizedBox(height: 22),
-    FilledButton(onPressed: () { if (activeWorld! < worlds.length - 1) startWorld(activeWorld! + 1); else setState(() => activeWorld = null); },
+    FilledButton(onPressed: () {
+      if (activeWorld! < worlds.length - 1) {
+        startWorld(activeWorld! + 1);
+      } else {
+        setState(() => activeWorld = null);
+      }
+    },
       child: Text(activeWorld! < worlds.length - 1 ? 'SONRAKİ DÜNYA →' : 'HARİTAYA DÖN')),
     TextButton(onPressed: () => setState(() => activeWorld = null), child: const Text('Haritaya dön')),
   ]));
